@@ -1,0 +1,337 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Yrsa:wght@400;500;600;700&display=swap"); */
+
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Yrsa:wght@400;500;600;700&display=swap"); */
+
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+Norge:wght@300..700&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Yrsa:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Sindoor & Indian Festival Color Palette */
+    --sindoor: 0 85% 45%;
+    --sindoor-deep: 0 75% 35%;
+    --sindoor-glow: 0 90% 55%;
+    --haldi: 45 95% 55%;
+    --haldi-light: 48 100% 70%;
+    --marigold: 30 95% 55%;
+    --marigold-light: 35 100% 65%;
+    --gold: 43 80% 50%;
+    --gold-shimmer: 45 90% 65%;
+    --ivory: 40 30% 96%;
+    --cream: 35 40% 92%;
+    --burgundy: 350 60% 25%;
+
+    --background: 35 40% 96%;
+    --foreground: 350 60% 20%;
+
+    --card: 40 30% 98%;
+    --card-foreground: 350 60% 20%;
+
+    --popover: 40 30% 98%;
+    --popover-foreground: 350 60% 20%;
+
+    --primary: 0 85% 45%;
+    --primary-foreground: 40 30% 98%;
+
+    --secondary: 45 95% 55%;
+    --secondary-foreground: 350 60% 20%;
+
+    --muted: 35 30% 90%;
+    --muted-foreground: 350 40% 40%;
+
+    --accent: 30 95% 55%;
+    --accent-foreground: 40 30% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 43 50% 75%;
+    --input: 43 50% 80%;
+    --ring: 0 85% 45%;
+
+    --radius: 0.75rem;
+
+    /* Gradient definitions */
+    --gradient-sunset: linear-gradient(135deg, hsl(30 95% 55%) 0%, hsl(0 85% 45%) 50%, hsl(350 60% 25%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(35 40% 96%) 0%, hsl(40 50% 90%) 100%);
+    --gradient-golden: linear-gradient(135deg, hsl(43 80% 50%) 0%, hsl(45 90% 65%) 50%, hsl(43 80% 50%) 100%);
+    --gradient-diya: radial-gradient(ellipse at center, hsl(45 100% 70%) 0%, hsl(30 95% 55%) 40%, transparent 70%);
+
+    /* Shadows */
+    --shadow-golden: 0 4px 20px -2px hsl(43 80% 50% / 0.3);
+    --shadow-warm: 0 10px 40px -10px hsl(0 85% 45% / 0.2);
+    --shadow-glow: 0 0 30px hsl(45 95% 55% / 0.4);
+
+    /* Sidebar defaults */
+    --sidebar-background: 35 40% 96%;
+    --sidebar-foreground: 350 60% 20%;
+    --sidebar-primary: 0 85% 45%;
+    --sidebar-primary-foreground: 40 30% 98%;
+    --sidebar-accent: 30 95% 55%;
+    --sidebar-accent-foreground: 40 30% 98%;
+    --sidebar-border: 43 50% 75%;
+    --sidebar-ring: 0 85% 45%;
+  }
+
+  .dark {
+    --background: 350 60% 8%;
+    --foreground: 40 30% 95%;
+
+    --card: 350 50% 12%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 350 50% 12%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 0 85% 55%;
+    --primary-foreground: 40 30% 98%;
+
+    --secondary: 45 80% 45%;
+    --secondary-foreground: 40 30% 98%;
+
+    --muted: 350 40% 20%;
+    --muted-foreground: 40 20% 70%;
+
+    --accent: 30 80% 50%;
+    --accent-foreground: 40 30% 98%;
+
+    --border: 350 40% 25%;
+    --input: 350 40% 25%;
+    --ring: 0 85% 55%;
+
+    --sidebar-background: 350 60% 8%;
+    --sidebar-foreground: 40 30% 95%;
+    --sidebar-primary: 0 85% 55%;
+    --sidebar-primary-foreground: 40 30% 98%;
+    --sidebar-accent: 30 80% 50%;
+    --sidebar-accent-foreground: 40 30% 98%;
+    --sidebar-border: 350 40% 25%;
+    --sidebar-ring: 0 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* Global body text → clean, modern, premium */
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", sans-serif;
+  }
+
+  /* Headings → elegant serif */
+  h1,
+  h2,
+  h3 {
+    font-family: "Yrsa", "Noto Serif Devanagari", serif;
+  }
+}
+
+@layer components {
+  /* Hindi text */
+  .font-hindi {
+    font-family: "Noto Serif Devanagari", serif;
+  }
+
+  /* Display & hero headlines → Playwrite Norge */
+  .font-display {
+    font-family: "Playwrite Norge", "Yrsa", serif;
+  }
+
+  .gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .gradient-golden {
+    background: var(--gradient-golden);
+  }
+
+  .golden-border {
+    border: 2px solid transparent;
+    background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box, var(--gradient-golden) border-box;
+  }
+
+  .golden-frame {
+    @apply relative;
+    border: 4px solid hsl(var(--gold));
+    box-shadow: 0 0 0 2px hsl(var(--gold-shimmer)), var(--shadow-golden), inset 0 0 20px hsl(var(--gold) / 0.1);
+  }
+
+  .text-gradient-golden {
+    background: var(--gradient-golden);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-golden {
+    box-shadow: var(--shadow-golden);
+  }
+
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Diya flicker animation */
+  @keyframes diya-flicker {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      filter: brightness(1);
+    }
+    25% {
+      opacity: 0.9;
+      transform: scale(1.02);
+      filter: brightness(1.1);
+    }
+    50% {
+      opacity: 0.95;
+      transform: scale(0.98);
+      filter: brightness(0.95);
+    }
+    75% {
+      opacity: 0.85;
+      transform: scale(1.01);
+      filter: brightness(1.05);
+    }
+  }
+
+  .animate-diya {
+    animation: diya-flicker 2s ease-in-out infinite;
+  }
+
+  /* Floating petals */
+  @keyframes float-petal {
+    0% {
+      transform: translateY(-10vh) rotate(0deg) translateX(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(110vh) rotate(360deg) translateX(50px);
+      opacity: 0;
+    }
+  }
+
+  .animate-petal {
+    animation: float-petal linear infinite;
+  }
+
+  /* Gentle pulse glow */
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 20px hsl(var(--gold) / 0.3), 0 0 40px hsl(var(--marigold) / 0.2);
+    }
+    50% {
+      box-shadow: 0 0 30px hsl(var(--gold) / 0.5), 0 0 60px hsl(var(--marigold) / 0.3);
+    }
+  }
+
+  .animate-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  /* Mandala pattern background */
+  .mandala-pattern {
+    background-image: radial-gradient(circle at 50% 50%, transparent 30%, hsl(var(--gold) / 0.05) 31%, hsl(var(--gold) / 0.05) 32%, transparent 33%),
+      radial-gradient(circle at 50% 50%, transparent 45%, hsl(var(--gold) / 0.03) 46%, hsl(var(--gold) / 0.03) 47%, transparent 48%);
+    background-size: 60px 60px;
+  }
+
+  /* Sindoor particles */
+  @keyframes float-sindoor {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.8;
+    }
+    80% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(100vh) rotate(180deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-sindoor {
+    animation: float-sindoor linear infinite;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes classyPetalFall {
+  0% {
+    transform: translateY(-10%) scale(0.95);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(50vh) translateX(8px) rotate(20deg);
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateY(105vh) translateX(-8px) rotate(60deg) scale(1);
+    opacity: 0;
+  }
+}
+
+.animate-classyPetal {
+  animation-name: classyPetalFall;
+  animation-timing-function: cubic-bezier(0.25, 0.8, 0.4, 1);
+  animation-iteration-count: infinite;
+}
+
+.sindoor-frame {
+  @apply relative rounded-2xl;
+  border: 2px solid hsl(var(--sindoor)); /* fixed */
+
+  box-shadow: 0 0 0 2px hsl(var(--sindoor) / 0.4), 0 4px 18px hsl(var(--sindoor) / 0.25), 0 0 30px hsl(var(--sindoor) / 0.15),
+    inset 0 0 20px hsl(var(--sindoor) / 0.25);
+
+  background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+    linear-gradient(135deg, hsl(var(--sindoor)) 0%, hsl(var(--sindoor)) 50%, hsl(var(--sindoor)) 100%) border-box;
+
+  animation: sindoorGlow 3s ease-in-out infinite;
+}
+
+@keyframes sindoorGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 2px hsl(var(--sindoor) / 0.4), 0 4px 18px hsl(var(--sindoor) / 0.25), 0 0 30px hsl(var(--sindoor) / 0.15),
+      inset 0 0 20px hsl(var(--sindoor) / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 2px hsl(var(--sindoor) / 0.5), 0 6px 24px hsl(var(--sindoor) / 0.32), 0 0 40px hsl(var(--sindoor) / 0.25),
+      inset 0 0 26px hsl(var(--sindoor) / 0.28);
+  }
+}
